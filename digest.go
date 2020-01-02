@@ -118,10 +118,6 @@ func parseChallenge(input string) (*challenge, error) {
 		case "qop":
 			//TODO(gavaletz) should be an array of strings?
 			c.Qop = strings.Trim(r[1], qs)
-		case "charset":
-			// ignore charset
-		default:
-			return nil, ErrBadChallenge
 		}
 	}
 	return c, nil
